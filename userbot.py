@@ -189,6 +189,21 @@ def load_module(path):
         module.register(bot)
 
     return name
+import os
+import sys
+
+@bot.on(events.NewMessage(pattern=r"\.stop"))
+async def stop_cmd(event):
+
+    await event.edit(
+        "🛑 Termux closed"
+    )
+
+    await bot.disconnect()
+
+    os.system("pkill -f com.termux")
+
+    sys.exit()
 
 @bot.on(events.NewMessage(pattern=r"\.ping"))
 async def ping(event):
@@ -243,7 +258,7 @@ async def info(event):
 
     text = f"""
 ╔═══ 🌘 bro9iBOT INFO 🌘 ═══╗
-
+   Player Menu
 👤 Nick: {me.first_name}
 🆔 ID: {me.id}
 ⚡ Status: Online
@@ -371,7 +386,7 @@ async def hack(event):
         )
 
 
-print("🌘 USERBOT STARTED")
+print("🌘бот запущен🌘")
 
 bot.start()
 

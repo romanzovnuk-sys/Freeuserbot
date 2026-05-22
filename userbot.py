@@ -512,17 +512,14 @@ async def info(event):
 
     text = f"""
 ╔═══ 🌘 bro9iBOT INFO 🌘 ═══╗
-   ⚡Admin Menu⚡
+
 👤 {me.first_name}
 🆔 {me.id}
-⚡ Online
-📦 Modules: {len(loaded_modules)}
-⏳ Uptime: {uptime}s
-👤 bro9i UserBot
-
+📦Модули: {len(loaded_modules)}
+⏳Время Запуска: {uptime}s
+👤Роль : FREE⏳
 ╚═════════════════════╝
 """
-
     photos = await bot.get_profile_photos(
         me.id,
         limit=1
